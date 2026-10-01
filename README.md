@@ -27,7 +27,7 @@ the scoring *is* the model's core, not a part bolted onto one.
 
 | File | What it is |
 |---|---|
-| `pythonx.py` | v1 — the original engine (stdlib only) |
+| `pythonx.py` | **v1.3 + optimization pass (Oct 1, 2026)** — the current engine (stdlib only) |
 | `pythonx11.py` | v1.1 — quadgram scorer + compiled C core + charset razor |
 | `fastcore.c` | the optional compiled core (counting hot paths) |
 | `quadgrams.txt` | four-letter-chunk frequency table for the v1.1 scorer |
@@ -38,11 +38,13 @@ the scoring *is* the model's core, not a part bolted onto one.
 ## Run it
 
 ```sh
-python3 pythonx11.py "<payload>"     # decipher one payload string
-python3 pythonx11.py --file p.txt    # decipher a payload from a file
-python3 pythonx11.py --bench         # the built-in bench, both engines
-python3 compare.py                   # v1 vs v1.1, side by side
-./build.sh                           # optional: build the C core first
+python3 pythonx.py "<payload>"      # decipher one payload string (current engine)
+python3 pythonx.py --file p.txt     # decipher a payload from a file
+python3 pythonx.py --bench         # the built-in standard bench
+python3 pythonx.py --bench13       # the v1.3 bench (Vigenere, transposition, sign, Chinese)
+python3 pythonx11.py "<payload>"   # v1.1 engine, for comparison
+python3 compare.py                  # v1 vs v1.1, side by side
+./build.sh                          # optional: build the C core first
 ```
 
 Stdlib only. No internet. Runs anywhere Python 3 runs — developed and
@@ -88,3 +90,20 @@ What made the difference:
   decode of it, so a real trail only competes with its own family.
 
 *Change the world one day at a time.*
+
+## Credits
+
+**Lead engineer:** Curtis Ray Dyess — PhantomX (his company), Crimson Root
+Linux study team.
+
+**Engine:** PythonX v1.3, optimization pass October 1, 2026 —
+Vigenere text-gating, histogram-sort hoist, UTF-8/CJK XOR razor, and a
+Chinese unigram tie-break. All 11 bench cases pass (5 standard + 6
+v1.3); the standard bench runs back at v1.2 parity after a 2× v1.3
+regression, and a Chinese-XOR payload that never solved before now
+solves in 0.11s.
+
+Built and benched on a Samsung Galaxy A16 in Termux. Python 3,
+standard library only, no internet needed.
+
+*Permission first. Scope defined. Then fearless inside it.*
