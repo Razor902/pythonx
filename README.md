@@ -27,7 +27,7 @@ the scoring *is* the model's core, not a part bolted onto one.
 
 | File | What it is |
 |---|---|
-| `pythonx.py` | **v1.3 + optimization pass (Oct 1, 2026)** — the current engine (stdlib only) |
+| `pythonx.py` | **v1.4 (Oct 1, 2026)** — the current engine (stdlib only) |
 | `pythonx11.py` | v1.1 — quadgram scorer + compiled C core + charset razor |
 | `fastcore.c` | the optional compiled core (counting hot paths) |
 | `quadgrams.txt` | four-letter-chunk frequency table for the v1.1 scorer |
@@ -96,7 +96,7 @@ What made the difference:
 **Lead engineer:** Curtis Ray Dyess — PhantomX (his company), Crimson Root
 Linux study team.
 
-**Engine:** PythonX v1.3, optimization pass October 1, 2026 —
+**Engine:** PythonX v1.4 — October 1, 2026 —
 Vigenere text-gating, histogram-sort hoist, UTF-8/CJK XOR razor, and a
 Chinese unigram tie-break. All 11 bench cases pass (5 standard + 6
 v1.3); the standard bench runs back at v1.2 parity after a 2× v1.3

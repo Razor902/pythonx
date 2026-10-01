@@ -1,10 +1,21 @@
 #!/usr/bin/env python3
 """
-pythonx.py -- PythonX v1.2, the PhantomX payload decipher.
+pythonx.py -- PythonX v1.4, the PhantomX payload decipher.
 
-v1.3 optimization pass (2026-10-01): Vigenere text-gate, histogram-sort
-hoist, UTF-8/CJK XOR razor, Chinese unigram tie-break. All 11 bench
-cases solve.
+v1.4 upgrade over v1.3 (2026-10-01) -- the optimization pass:
+  - the Vigenere text-gate: Vigenere analysis now runs only on
+    text-like states; base64, hex, and binary states skip the
+    expensive crack entirely;
+  - the histogram-sort hoist: the expected frequency distribution is
+    sorted once, not 256 times per state -- algebraically identical
+    scoring;
+  - the UTF-8/CJK XOR razor: finds XOR keys hiding Chinese where the
+    histogram and base64/hex razors are blind;
+  - the Chinese unigram tie-break: tells a true CJK key from its
+    bit-neighbors, which also decode as CJK.
+  - measured: standard bench 7.5s -> ~3.7s (v1.2 parity); the
+    chinese-xor case v1.3 never solved now solves in ~0.1s; all 11
+    bench cases solve.
 
 v1.2 upgrade over v1.1:
   - the Divincy layer: Da Vinci's mirror writing joins the peelers --
