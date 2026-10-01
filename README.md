@@ -107,3 +107,7 @@ Built and benched on a Samsung Galaxy A16 in Termux. Python 3,
 standard library only, no internet needed.
 
 *Permission first. Scope defined. Then fearless inside it.*
+
+## License
+
+Proprietary — all rights reserved. See [LICENSE](LICENSE).
