@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1640" font-family="DejaVu Sans, sans-serif">
+  <rect x="0" y="0" width="1200" height="1640" fill="#0b0e1a"/>
+  <rect x="14" y="14" width="1172" height="1612" fill="none" stroke="#7b2fff" stroke-width="4" rx="18"/>
+
+  <!-- Title -->
+  <text x="600" y="78" text-anchor="middle" font-size="42" font-weight="bold" fill="#39ff6a">PYTHONX — THE DECIPHER</text>
+  <text x="600" y="118" text-anchor="middle" font-size="24" fill="#c9a7ff">How to use it — the for-dummies schematic</text>
+  <text x="600" y="152" text-anchor="middle" font-size="19" fill="#e8e8f0">A payload is plain words wrapped in layers, like a letter inside nested envelopes. PythonX unwraps it.</text>
+
+  <!-- Flow panel -->
+  <rect x="60" y="180" width="1080" height="660" fill="#12172e" stroke="#7b2fff" stroke-width="2" rx="12"/>
+  <text x="90" y="222" font-size="24" font-weight="bold" fill="#39ff6a">THE PICTURE — WHAT HAPPENS INSIDE</text>
+
+  <!-- step boxes -->
+  <g>
+    <rect x="90" y="245" width="1020" height="92" fill="#0b0e1a" stroke="#39ff6a" stroke-width="2" rx="10"/>
+    <circle cx="135" cy="291" r="24" fill="#7b2fff"/><text x="135" y="300" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">1</text>
+    <text x="180" y="282" font-size="22" font-weight="bold" fill="#e8e8f0">YOU FEED IT A PAYLOAD</text>
+    <text x="180" y="314" font-size="19" fill="#aeb4cc">The wrapped-up text. Looks like gibberish — that is normal.</text>
+  </g>
+  <path d="M600 337 L600 362" stroke="#39ff6a" stroke-width="4"/><path d="M588 356 L612 356 L600 374 Z" fill="#39ff6a"/>
+  <g>
+    <rect x="90" y="378" width="1020" height="92" fill="#0b0e1a" stroke="#39ff6a" stroke-width="2" rx="10"/>
+    <circle cx="135" cy="424" r="24" fill="#7b2fff"/><text x="135" y="433" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">2</text>
+    <text x="180" y="415" font-size="22" font-weight="bold" fill="#e8e8f0">IT TRIES EVERY KEY IT KNOWS</text>
+    <text x="180" y="447" font-size="19" fill="#aeb4cc">Hex, base64, letter-spin, XOR mask, un-zip — one layer at a time.</text>
+  </g>
+  <path d="M600 470 L600 495" stroke="#39ff6a" stroke-width="4"/><path d="M588 489 L612 489 L600 507 Z" fill="#39ff6a"/>
+  <g>
+    <rect x="90" y="511" width="1020" height="92" fill="#0b0e1a" stroke="#39ff6a" stroke-width="2" rx="10"/>
+    <circle cx="135" cy="557" r="24" fill="#7b2fff"/><text x="135" y="566" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">3</text>
+    <text x="180" y="548" font-size="22" font-weight="bold" fill="#e8e8f0">IT TASTES EACH RESULT</text>
+    <text x="180" y="580" font-size="19" fill="#aeb4cc">"Does this look like real words yet?" Every try gets a score.</text>
+  </g>
+  <path d="M600 603 L600 628" stroke="#39ff6a" stroke-width="4"/><path d="M588 622 L612 622 L600 640 Z" fill="#39ff6a"/>
+  <g>
+    <rect x="90" y="644" width="1020" height="92" fill="#0b0e1a" stroke="#39ff6a" stroke-width="2" rx="10"/>
+    <circle cx="135" cy="690" r="24" fill="#7b2fff"/><text x="135" y="699" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">4</text>
+    <text x="180" y="681" font-size="22" font-weight="bold" fill="#e8e8f0">IT KEEPS ONLY THE BEST TRAILS</text>
+    <text x="180" y="713" font-size="19" fill="#aeb4cc">Dead ends and repeats get dropped. No wasted steps. This is the fast part.</text>
+  </g>
+  <path d="M600 736 L600 761" stroke="#39ff6a" stroke-width="4"/><path d="M588 755 L612 755 L600 773 Z" fill="#39ff6a"/>
+  <g>
+    <rect x="90" y="777" width="1020" height="48" fill="#39ff6a" rx="10"/>
+    <text x="600" y="810" text-anchor="middle" font-size="22" font-weight="bold" fill="#0b0e1a">OUT COME PLAIN WORDS — plus the recipe of every layer it peeled</text>
+  </g>
+
+  <!-- Old way vs PythonX -->
+  <rect x="60" y="862" width="1080" height="118" fill="#12172e" stroke="#7b2fff" stroke-width="2" rx="12"/>
+  <text x="90" y="902" font-size="21" fill="#ff7a7a">THE OLD WAY: tries every combination blind — 150,000 tries on the deep test, then gave up.</text>
+  <text x="90" y="940" font-size="21" fill="#39ff6a">PYTHONX: follows the trails that smell like language — 7,472 tries, solved. Same phone, same test.</text>
+
+  <!-- How to run -->
+  <rect x="60" y="1002" width="1080" height="196" fill="#12172e" stroke="#7b2fff" stroke-width="2" rx="12"/>
+  <text x="90" y="1044" font-size="24" font-weight="bold" fill="#39ff6a">HOW TO RUN IT — IN TERMUX, THREE STEPS</text>
+  <text x="90" y="1084" font-size="21" fill="#e8e8f0">1.  Go to the tool's home:</text>
+  <text x="330" y="1084" font-size="21" font-family="DejaVu Sans Mono, monospace" fill="#ffd75e">cd ~/pythonx</text>
+  <text x="90" y="1122" font-size="21" fill="#e8e8f0">2.  Feed it a payload:</text>
+  <text x="330" y="1122" font-size="21" font-family="DejaVu Sans Mono, monospace" fill="#ffd75e">python3 pythonx.py "PASTE PAYLOAD HERE"</text>
+  <text x="90" y="1160" font-size="21" fill="#e8e8f0">3.  Read the answer it prints — plain words plus the recipe. Done.</text>
+  <text x="90" y="1190" font-size="18" fill="#aeb4cc">Extras:  --bench  races it against the old way.   --file payload.txt  reads the payload from a file.</text>
+
+  <!-- Read the answer -->
+  <rect x="60" y="1220" width="1080" height="170" fill="#12172e" stroke="#7b2fff" stroke-width="2" rx="12"/>
+  <text x="90" y="1262" font-size="24" font-weight="bold" fill="#39ff6a">HOW TO READ THE ANSWER</text>
+  <text x="90" y="1300" font-size="20" font-family="DejaVu Sans Mono, monospace" fill="#ffd75e">path  : hex-decode -&gt; xor-0x2a -&gt; rot-21</text>
+  <text x="760" y="1300" font-size="19" fill="#aeb4cc">= layers peeled, in order</text>
+  <text x="90" y="1334" font-size="20" font-family="DejaVu Sans Mono, monospace" fill="#ffd75e">plain : the engineer reads the payload...</text>
+  <text x="760" y="1334" font-size="19" fill="#aeb4cc">= your answer</text>
+  <text x="90" y="1368" font-size="20" font-family="DejaVu Sans Mono, monospace" fill="#ffd75e">score : 0.87</text>
+  <text x="760" y="1368" font-size="19" fill="#aeb4cc">= how sure — near 1.00 is clean</text>
+
+  <!-- Glossary -->
+  <rect x="60" y="1412" width="1080" height="150" fill="#12172e" stroke="#7b2fff" stroke-width="2" rx="12"/>
+  <text x="90" y="1454" font-size="24" font-weight="bold" fill="#39ff6a">WORDS TO KNOW</text>
+  <text x="90" y="1490" font-size="19" fill="#e8e8f0">Payload = the wrapped message.   Layer = one wrap.   Peel = undo one wrap.</text>
+  <text x="90" y="1522" font-size="19" fill="#e8e8f0">Score = how word-like a result looks.   Beam = the handful of best trails it follows at once.</text>
+
+  <text x="600" y="1604" text-anchor="middle" font-size="18" fill="#c9a7ff">PhantomX bench tool — built October 1, 2026. Python 3, standard library only, no internet needed.</text>
+</svg>
