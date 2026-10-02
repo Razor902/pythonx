@@ -33,6 +33,8 @@ the scoring *is* the model's core, not a part bolted onto one.
 | `quadgrams.txt` | four-letter-chunk frequency table for the v1.1 scorer |
 | `compare.py` | v1 vs v1.1 on the same five-case bench |
 | `build.sh` | builds `libpxfast.so` (v1.1 falls back to pure Python without it) |
+| `silicon/px-processor-sketch.md` | the processor sketch — PythonX as a hardware accelerator (design doc) |
+| `silicon/rtl/xcu.v` | the XCU: XOR count array in synthesizable Verilog, verified bit-for-bit vs the C core |
 | `pythonx-schematic.svg/png` | the "for dummies" schematic of how a decipher runs |
 
 ## Run it
@@ -90,6 +92,15 @@ What made the difference:
   decode of it, so a real trail only competes with its own family.
 
 *Change the world one day at a time.*
+
+## Silicon
+
+The algorithm is the seed; the processor gets built around it, not from
+it. `silicon/` holds the first hardware step: the XCU (XOR count array,
+256 lanes) as real Verilog, simulated with Icarus Verilog and verified
+bit-for-bit against the C core on 10 vectors — 69,120 counter
+comparisons, zero mismatches. `silicon/rtl/run.sh` reproduces the whole
+flow. All files carry the watermark and the proprietary license.
 
 ## Credits
 
