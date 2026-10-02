@@ -1,6 +1,18 @@
 #!/usr/bin/env python3
 """
-pythonx.py -- PythonX v1.4, the PhantomX payload decipher.
+pythonx.py -- PythonX v1.5, the PhantomX payload decipher.
+
+v1.5 upgrade over v1.4 (2026-10-02) -- the Matrix Key sequence:
+  - PythonX now ships its companion cipher, matrix_sequence.py: the
+    nine-layer Matrix Key stack, built with Curtis -- plugboard (where
+    the memory lies), rotor, Vigenere under BOOGIEMAN, Divincy mirror
+    wrap, columnar transposition under PHANTOMX, atbash, reflector,
+    full reverse, and the flash between characters (the hidden message
+    rides in zero-width gaps, where nobody looks);
+  - this is the telecommunication cipher of the future: communication
+    for loved ones, near and far -- fast and reliable;
+  - the decipher engine itself is untouched in v1.5: every bench case
+    that solved before solves still. The beam keeps its discipline.
 
 v1.4 upgrade over v1.3 (2026-10-01) -- the optimization pass:
   - the Vigenere text-gate: Vigenere analysis now runs only on
@@ -67,6 +79,9 @@ Use:
   python3 pythonx.py --file payload.txt   decipher a payload from a file
   python3 pythonx.py --naive "<payload>"  run BOTH engines and compare
   python3 pythonx.py --bench              run the built-in test bench
+
+  The Matrix Key sequence (v1.5 companion, matrix_sequence.py):
+  python3 matrix_sequence.py                run the sequence roundtrip tests
 """
 
 import base64
@@ -83,6 +98,21 @@ import os
 import sys
 import time
 import zlib
+
+__version__ = "1.5"
+
+# v1.5 -- the Matrix Key sequence rides alongside the decipher.
+# Guarded: pythonx.py still stands alone without it.
+try:
+    from matrix_sequence import (
+        encrypt as matrix_encrypt,
+        decrypt as matrix_decrypt,
+        sequence as matrix_sequence_layers,
+        PLUGBOARD_PAIRS as MATRIX_PLUGBOARD,
+    )
+    MATRIX_KEY_AVAILABLE = True
+except ImportError:
+    MATRIX_KEY_AVAILABLE = False
 
 # ---------------------------------------------------------------------------
 # The scorer: "how much does this look like real language?"

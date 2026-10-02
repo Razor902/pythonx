@@ -27,12 +27,13 @@ the scoring *is* the model's core, not a part bolted onto one.
 
 | File | What it is |
 |---|---|
-| `pythonx.py` | **v1.4 (Oct 1, 2026)** — the current engine (stdlib only) |
+| `pythonx.py` | **v1.5 (Oct 2, 2026)** — the current engine (stdlib only) + the Matrix Key sequence bridge |
 | `pythonx11.py` | v1.1 — quadgram scorer + compiled C core + charset razor |
 | `fastcore.c` | the optional compiled core (counting hot paths) |
 | `quadgrams.txt` | four-letter-chunk frequency table for the v1.1 scorer |
 | `compare.py` | v1 vs v1.1 on the same five-case bench |
 | `build.sh` | builds `libpxfast.so` (v1.1 falls back to pure Python without it) |
+| `matrix_sequence.py` | **v1.5** — the Matrix Key sequence: nine-layer telecommunication cipher of the future (plugboard → rotor → Vigenere BOOGIEMAN → Divincy mirror → columnar PHANTOMX → atbash → reflector → reverse → flash between characters). Fast, reliable, for loved ones near and far |
 | `silicon/px-processor-sketch.md` | the processor sketch — PythonX as a hardware accelerator (design doc) |
 | `silicon/rtl/xcu.v` | the XCU: XOR count array in synthesizable Verilog, verified bit-for-bit vs the C core |
 | `pythonx-schematic.svg/png` | the "for dummies" schematic of how a decipher runs |
