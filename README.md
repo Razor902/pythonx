@@ -120,6 +120,15 @@ standard library only, no internet needed.
 
 *Permission first. Scope defined. Then fearless inside it.*
 
+## Ecosystem
+
+- **Triage gate** (`triage.py`, `ALGO.md`): structured-vs-random triage — the engine
+  asks "is this blob worth deciphering?" and skips random noise with zero search
+  states, spending the beam budget where the structure is. Wired into `pythonx13.py`.
+- **Pandora's Box** builds on PythonX: the `pandora_x` treasure-map bridge deciphers
+  layered payloads through the triage gate —
+  [Razor902/pandora](https://github.com/Razor902/pandora).
+
 ## License
 
 Proprietary — all rights reserved. See [LICENSE](LICENSE).
